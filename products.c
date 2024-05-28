@@ -4,10 +4,11 @@ typedef struct {
     char name[50];
     float price;
     int quantity;
+    char store;
 } Product;
 
 void print_product(Product p) {
-    printf("Product: %s, Price: %.2f, Quantity: %d\n", p.name, p.price, p.quantity);
+    printf("Product: %s, Price: %.2f, Quantity: %d\n, Store: %s", p.name, p.price, p.quantity, p.store);
 }
 
 int main() {

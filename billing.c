@@ -4,10 +4,18 @@ typedef struct {
     char name[50];
     float price;
     int quantity;
+    float discount; // Discount percentage
+    float tax;      // Tax percentage
 } Product;
 
 float calculate_total_price(Product p) {
-    return p.price * p.quantity;
+    // Calculate discount amount
+    float discount_amount = (p.price * p.quantity) * (p.discount / 100.0);
+    // Calculate tax amount
+    float tax_amount = ((p.price * p.quantity) - discount_amount) * (p.tax / 100.0);
+    // Calculate total price
+    float total_price = (p.price * p.quantity) - discount_amount + tax_amount;
+    return total_price;
 }
 
 void add_product(Product products[], int *count, char *name, float price, int quantity) {
