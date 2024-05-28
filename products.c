@@ -7,17 +7,24 @@ typedef struct {
     char store;
 } Product;
 
+float calculate_unit_price(float total_price, int quantity) {
+    return total_price / quantity;
+}
+
 void print_product(Product p) {
-    printf("Product: %s, Price: %.2f, Quantity: %d\n, Store: %s", p.name, p.price, p.quantity, p.store);
+    printf("Product: %s, Price: %.2f, Quantity: %d\n", p.name, p.price, p.quantity);
 }
 
 int main() {
     Product p1 = {"Apple", 0.5, 30};
-    Product p = {"Banana", 0.2, 50};
+    Product p2 = {"Banana", 0.2, 50};
+    Product p3 = {"Orange", 0.3, 80};
+
 
     print_product(p1);
-    print_product(p);
+    print_product(p2);
+    print_product(p3);
+
 
     return 0;
 }
-
